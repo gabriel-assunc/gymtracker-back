@@ -11,7 +11,6 @@ class CreateUserController {
 
     async handle(req: Request, res: Response) {
         const { name, email, password } = req.body;
-        console.log({ name, email, password })
         const newUser = new User({ name, email, password });
         const { message, error, status } = await this.service.exec(newUser)
 
